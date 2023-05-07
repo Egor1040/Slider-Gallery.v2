@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    width: 960px;
+    display: flex;
+    column-gap: 20px;
+}
+
+li {
+    overflow: hidden;
+    height: 245px;
+    width: 307px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.indicator__el {
+    background: #FFFFFF;
+}
+
+@media(max-width: 1024px) {
+    .gallery__items {
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        padding: 40px;
+    }
+    .modal__close {
+        left: calc(255px + (925.22 - 255) * ((100vw - 320px) / (1000 - 320)));
+    }
+}
+
+@media(max-width: 424px) {
+    .gallery__items {
+        padding: 0;
+    }
+}
+
+.gallery li {
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: filter 0.5s;
+}
+
+.gallery__img {
+    overflow: hidden;
+    height: 245px;
+    width: 307px;
+}
+
+.gallery li:hover {
+    filter: grayscale(0);
+    animation: animate-li 0.5s ease-out forwards;
+}
+
+@keyframes animate-li {
+    from {
+        transform: translateY(1px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.animate {
+    transform: translateY(500px);
+}
+
+.animate-modal {
+    transform: translateY(0);
+    animation: animate-modal 0.3s linear forwards;
+}
+
+@keyframes animate-modal {
+    from {transform: translateY(500px)}
+
+    to {transform: translateY(0);}
+}
+
+.animate-leave {
+    transform: translateY(0);
+    animation: animate-leave 0.3s linear forwards;
+}
+
+@keyframes animate-leave {
+    from {transform: translateY(0)}
+
+    to {transform: translateY(1000px);}
+}
+
+.animate-right {
+    transform: translateX(0);
+    animation: animate-right__modal 0.3s ease forwards;
+}
+
+@keyframes animate-right__modal {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.animate-left {
+    transform: translateX(0);
+    animation: animate-left__modal 0.3s ease forwards;
+}
+
+@keyframes animate-left__modal {
+    from {
+        transform: translateX(-1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
