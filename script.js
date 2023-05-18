@@ -43,8 +43,8 @@ class Gallery {
                     <h2></h2>
                     <p></p>
                     <div class="btn">
-                        <div class="btn__prev"><svg><use xlink:href="sprite.svg#arrow"></svg></div>
-                        <div class="btn__next"><svg><use xlink:href="sprite.svg#arrow"></svg></div>
+                        <div class="btn__prev"></div>
+                        <div class="btn__next"></div>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@ class Gallery {
                     <h2></h2>
                     <p></p>
                     <div class="btn">
-                        <div class="btn__prev"><svg><use xlink:href="sprite.svg#arrow"></svg></div>
-                        <div class="btn__next"><svg><use xlink:href="sprite.svg#arrow"></svg></div>
+                        <div class="btn__prev"></div>
+                        <div class="btn__next"></div>
                     </div>
                 </div>
             </div>
@@ -238,23 +238,21 @@ class Gallery {
 
         .btn__prev,
         .btn__next {
-            max-height: 24px;
+            width: 14.04px;
+            height: 24px;
             position: relative;
             z-index: 1;
-            cursor: pointer;  
+            cursor: pointer; 
+            background-size: 14.04px 24px;
+            background-repeat: no-repeat;
         }
 
-        .btn__prev svg,
-        .btn__next svg{
-            position: relative;
-            z-index: -1;
-            width: 14px;
-            height: 24px;
-            transform: rotate(-180deg);
+        .btn__prev {
+            background-image: url(img/icon/arrow-left.svg); 
         }
 
-        .btn__next svg{
-            transform: rotate(0deg);
+        .btn__next {
+            background-image: url(img/icon/arrow-right.svg); 
         }
         
         .none {
